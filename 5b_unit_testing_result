@@ -1,0 +1,10 @@
+PS D:\Projects\Cohort\emotion_detection_app> venv\Scripts\python.exe -m pytest tests\test_emotion_detection.py
+============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-8.3.4, pluggy-1.6.0
+rootdir: D:\Projects\Cohort\emotion_detection_app
+configfile: pytest.ini
+collected 3 items
+
+tests\test_emotion_detection.py ...                                      [100%]
+
+============================== 3 passed in 0.39s ==============================
