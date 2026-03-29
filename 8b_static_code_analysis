@@ -1,0 +1,4 @@
+PS D:\Projects\Cohort\emotion_detection_app> venv\Scripts\python.exe -m pylint --persistent=n server.py
+
+------------------------------------
+Your code has been rated at 10.00/10
