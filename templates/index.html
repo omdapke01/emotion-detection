@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <main class="page">
+        <section class="panel">
+            <p class="eyebrow">Customer Feedback Analytics</p>
+            <h1>Emotion Detection Demo</h1>
+            <p class="lede">
+                Paste customer feedback below and analyze the dominant emotion
+                detected by Watson NLP.
+            </p>
+
+            <label for="feedback">Feedback text</label>
+            <textarea id="feedback" rows="6" placeholder="Type customer feedback here..."></textarea>
+
+            <button id="analyze-button" type="button">Analyze Emotion</button>
+
+            <div id="result" class="result" aria-live="polite">
+                Results will appear here.
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const button = document.getElementById("analyze-button");
+        const feedbackInput = document.getElementById("feedback");
+        const resultContainer = document.getElementById("result");
+
+        async function analyzeFeedback() {
+            const textToAnalyze = feedbackInput.value;
+            const response = await fetch(
+                `/emotionDetector?textToAnalyze=${encodeURIComponent(textToAnalyze)}`
+            );
+            const resultText = await response.text();
+            resultContainer.textContent = resultText;
+        }
+
+        button.addEventListener("click", analyzeFeedback);
+    </script>
+</body>
+</html>
