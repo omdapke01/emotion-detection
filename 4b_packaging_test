@@ -1,0 +1,4 @@
+PS D:\Projects\Cohort\emotion_detection_app> venv\Scripts\python.exe -c "import EmotionDetection; from EmotionDetection import emotion_detector; print('Package imported successfully'); print(callable(emotion_detector)); print(EmotionDetection.__all__)"
+Package imported successfully
+True
+['emotion_detector']
